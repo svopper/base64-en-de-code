@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Base64 en- and decoder</h1>
+        <p>This is a no-bullshit base64 en- and decoder. I created this, since I ususally handle sensitive base64 encded data and wanted a tool that I am sure is not intercepted by third-parties.</p>
+        <p>Source: <a href="https://github.com/svopper/base64-en-de-code">svopper/base64-en-de-code</a>.</p>
+    </header>
+
+    <main>
+        <div class="toggle">
+            <button id="encode">Encode</button>
+            <button id="decode">Decode</button>
+        </div>
+        <div class="input">
+            <h2>Input</h2>
+            <textarea id="input" placeholder="Enter your base64 encoded data here..."></textarea>
+        </div>
+        <div class="output">
+            <h2>Output</h2>
+            <textarea id="output" placeholder="Your decoded data will appear here..."></textarea>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
