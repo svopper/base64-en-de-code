@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,27 +9,72 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Base64 en- and decoder</h1>
-        <p>This is a no-bullshit base64 en- and decoder. I created this, since I ususally handle sensitive base64 encded data and wanted a tool that I am sure is not intercepted by third-parties.</p>
-        <p>Source: <a href="https://github.com/svopper/base64-en-de-code">svopper/base64-en-de-code</a>.</p>
+        <p>This is a no-bullshit base64 en- and decoder. I created this, since I ususally handle sensitive base64 encded
+            data and wanted a tool that I am sure is not intercepted by third-parties.</p>
+        <p>Source: <a href="https://github.com/svopper/base64-en-de-code">svopper/base64-en-de-code</a></p>
     </header>
 
     <main>
         <div class="toggle">
-            <button id="encode">Encode</button>
-            <button id="decode">Decode</button>
+            <input type="radio" id="encode" name="toggle" value="encode" checked>
+            <label for="encode">Encode</label>
+            <input type="radio" id="decode" name="toggle" value="decode">
+            <label for="decode">Decode</label>
         </div>
         <div class="input">
             <h2>Input</h2>
-            <textarea id="input" placeholder="Enter your base64 encoded data here..."></textarea>
+            <textarea id="input" placeholder="Enter your data here..."></textarea>
         </div>
         <div class="output">
-            <h2>Output</h2>
-            <textarea id="output" placeholder="Your decoded data will appear here..."></textarea>
+            <h2>Output</h2> <button id="copyButton">Copy to Clipboard</button>
+            <textarea id="output" disabled placeholder="Your converted data will appear here..."></textarea>
         </div>
     </main>
     <script src="script.js"></script>
+    <script>
+        const input = document.getElementById('input');
+        const output = document.getElementById('output');
+        const encode = document.getElementById('encode');
+        const decode = document.getElementById('decode');
+        const copyToClipboard = document.getElementById('copy-to-clipboard');
+
+        function encodeData() {
+            output.value = btoa(input.value);
+        }
+
+        function decodeData() {
+            output.value = atob(input.value);
+        }
+
+        input.addEventListener('input', () => {
+            if (encode.checked) {
+                encodeData();
+            } else {
+                decodeData();
+            }
+        });
+
+        encode.addEventListener('change', () => {
+            encodeData();
+        });
+
+        decode.addEventListener('change', () => {
+            decodeData();
+        });
+
+        const copyButton = document.getElementById("copyButton");
+        copyButton.addEventListener("click", function () {
+            navigator.clipboard.writeText(output.value);
+
+            // Add animation class for feedback
+            copyButton.classList.add("copyAnimation");
+            setTimeout(() => copyButton.classList.remove("copyAnimation"), 1000);
+        });
+    </script>
 </body>
+
 </html>
