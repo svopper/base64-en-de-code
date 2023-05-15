@@ -34,13 +34,12 @@
             <textarea id="output" disabled placeholder="Your converted data will appear here..."></textarea>
         </div>
     </main>
-    <script src="script.js"></script>
     <script>
         const input = document.getElementById('input');
         const output = document.getElementById('output');
         const encode = document.getElementById('encode');
         const decode = document.getElementById('decode');
-        const copyToClipboard = document.getElementById('copy-to-clipboard');
+        const copyToClipboardButton = document.getElementById('copy-to-clipboard');
 
         function encodeData() {
             output.value = btoa(input.value);
