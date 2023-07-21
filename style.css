@@ -10,7 +10,7 @@ body {
   font-size: 16px;
   line-height: 1.4;
   color: white;
-  background-color: rgb(12, 9, 28);
+  background-color: #0c091c;
 }
 
 nav {
@@ -55,7 +55,7 @@ button {
   font-size: 18px;
   padding: 10px 20px;
   border: none;
-  background-color: rgb(122, 97, 246);
+  background-color: #7a61f6;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -97,7 +97,7 @@ textarea {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgb(122, 97, 246);
+  background-color: #7a61f6;
   color: white;
   border: none;
   cursor: pointer;
@@ -142,8 +142,8 @@ textarea {
 }
 
 .switch-field label {
-  background-color: rgb(38 35 54);
-  color: rgb(210, 210, 210);
+  background-color: #262336;
+  color: #d2d2d2;
   font-size: 14px;
   line-height: 1;
   text-align: center;
@@ -159,7 +159,7 @@ textarea {
 }
 
 .switch-field input:checked+label {
-  background-color: rgb(122, 97, 246);
+  background-color: #7662ee;
   color: white;
   box-shadow: none;
 }
