@@ -48,14 +48,7 @@ main {
   max-width: 800px;
   margin: 0 auto;
   padding: 0px 50px;
-  /* background-color: white; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.toggle {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
 }
 
 button {
