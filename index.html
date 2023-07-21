@@ -5,33 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>No B$ Base64 encoder & decoder</title>
     <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <nav>
+        <a href="https://github.com/svopper/base64-en-de-code" target="_blank"><i class="fa fa-github"
+                style="color: white; font-size: 20px; margin-right: 5px;"></i>svopper/base64-en-de-code</a>
+    </nav>
     <header>
-        <h1>Base64 en- and decoder</h1>
-        <p>This is a no-bullshit base64 en- and decoder. I created this, since I ususally handle sensitive base64 encded
+        <h1>Base64 encoder & decoder</h1>
+        <p>This is a no-bullshit base64 encoder and decoder. I created this, since I ususally handle sensitive base64
+            encded
             data and wanted a tool that I am sure is not intercepted by third-parties.</p>
-        <p>Source: <a href="https://github.com/svopper/base64-en-de-code">svopper/base64-en-de-code</a></p>
     </header>
 
     <main>
-        <div class="toggle">
-            <input type="radio" id="encode" name="toggle" value="encode" checked>
+        <div class="switch-field">
+            <input type="radio" id="encode" name="toggle" value="encode" checked />
             <label for="encode">Encode</label>
-            <input type="radio" id="decode" name="toggle" value="decode">
+            <input type="radio" id="decode" name="toggle" value="decode" />
             <label for="decode">Decode</label>
         </div>
+
         <div class="input">
             <h2>Input</h2>
             <textarea id="input" placeholder="Enter your data here..."></textarea>
         </div>
         <div class="output">
-            <h2>Output</h2> <button id="copyButton">Copy to Clipboard</button>
+            <h2>Output</h2>
             <textarea id="output" disabled placeholder="Your converted data will appear here..."></textarea>
+            <button id="copyButton" class="copy-to-clipboard">
+                <i class="fa fa-clipboard" style="font-size: 24px;"></i>
+            </button>
+            <div id="copyPrompt" class="copy-prompt">Copied!</div>
         </div>
     </main>
     <script>
@@ -40,6 +50,7 @@
         const encode = document.getElementById('encode');
         const decode = document.getElementById('decode');
         const copyToClipboardButton = document.getElementById('copy-to-clipboard');
+        const copyPrompt = document.getElementById("copyPrompt");
 
         function encodeData() {
             output.value = btoa(input.value);
@@ -69,9 +80,16 @@
         copyButton.addEventListener("click", function () {
             navigator.clipboard.writeText(output.value);
 
+            copyPrompt.style.display = "block";
+
             // Add animation class for feedback
             copyButton.classList.add("copyAnimation");
             setTimeout(() => copyButton.classList.remove("copyAnimation"), 1000);
+
+            // Hide the prompt message after a short delay
+            setTimeout(() => {
+                copyPrompt.style.display = "none";
+            }, 1000);
         });
     </script>
 </body>
