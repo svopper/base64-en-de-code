@@ -18,9 +18,10 @@
     </nav>
     <header>
         <h1>Base64 encoder & decoder</h1>
-        <p>This is a no-bullshit base64 encoder and decoder. I created this, since I ususally handle sensitive base64
-            encded
-            data and wanted a tool that I am sure is not intercepted by third-parties.</p>
+        <p>Introducing my highly secure and efficient base64 encoder and decoder, meticulously designed to handle
+            sensitive data with utmost confidentiality. This cutting-edge tool ensures that your valuable information
+            remains impervious to any potential interception by third-parties. Experience the unparalleled peace of mind
+            and reliability with my state-of-the-art solution for base64 encoding and decoding. Enjoy.</p>
     </header>
 
     <main>
@@ -44,54 +45,7 @@
             <div id="copyPrompt" class="copy-prompt">Copied!</div>
         </div>
     </main>
-    <script>
-        const input = document.getElementById('input');
-        const output = document.getElementById('output');
-        const encode = document.getElementById('encode');
-        const decode = document.getElementById('decode');
-        const copyToClipboardButton = document.getElementById('copy-to-clipboard');
-        const copyPrompt = document.getElementById("copyPrompt");
-
-        function encodeData() {
-            output.value = btoa(input.value);
-        }
-
-        function decodeData() {
-            output.value = atob(input.value);
-        }
-
-        input.addEventListener('input', () => {
-            if (encode.checked) {
-                encodeData();
-            } else {
-                decodeData();
-            }
-        });
-
-        encode.addEventListener('change', () => {
-            encodeData();
-        });
-
-        decode.addEventListener('change', () => {
-            decodeData();
-        });
-
-        const copyButton = document.getElementById("copyButton");
-        copyButton.addEventListener("click", function () {
-            navigator.clipboard.writeText(output.value);
-
-            copyPrompt.style.display = "block";
-
-            // Add animation class for feedback
-            copyButton.classList.add("copyAnimation");
-            setTimeout(() => copyButton.classList.remove("copyAnimation"), 1000);
-
-            // Hide the prompt message after a short delay
-            setTimeout(() => {
-                copyPrompt.style.display = "none";
-            }, 1000);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
