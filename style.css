@@ -5,6 +5,12 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 16px;
@@ -45,10 +51,8 @@ header p {
 
 /* Main styles */
 main {
-  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0px 50px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -67,11 +71,12 @@ button:hover {
 
 textarea {
   width: 100%;
+  height: 350px;
   padding: 10px;
   font-size: 1.2rem;
   border: none;
   color: white;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin-bottom: 20px;
   background: rgba(255, 255, 255, 0.1);
   resize: none;
@@ -80,13 +85,28 @@ textarea {
 h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-textarea {
-  height: 150px;
+.converter {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
 }
 
-.output {
+.converter>div {
+  flex: 1;
+  width: 50%;
+  height: 400px;
+}
+
+.converter>div:first-child {
+  border-right: 1px solid #444;
+  /* Subtle line on the right side of the first .box */
+}
+
+
+*/ .output {
   position: relative;
 }
 
