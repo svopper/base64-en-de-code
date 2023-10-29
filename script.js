@@ -4,21 +4,26 @@ const encode = document.getElementById('encode');
 const decode = document.getElementById('decode');
 const copyToClipboardButton = document.getElementById('copy-to-clipboard');
 const copyPrompt = document.getElementById("copy-prompt");
+const errorMessage = document.getElementById("error-message");
 
 function encodeData() {
     output.value = btoa(input.value);
 }
 
 function decodeData() {
-    output.value = atob(input.value);
+    try {
+        var decodedData = atob(input.value);
+        output.value = decodedData;
+        errorMessage.innerHTML = "";
+    } catch (e) {
+        errorMessage.innerHTML = "Invalid base64 string"
+    }
 }
 
 input.addEventListener('input', () => {
-    if (encode.checked) {
-        encodeData();
-    } else {
-        decodeData();
-    }
+    encode.checked
+    ? encodeData()
+    : decodeData();
 });
 
 encode.addEventListener('change', () => {
