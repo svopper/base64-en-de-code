@@ -3,7 +3,7 @@ const output = document.getElementById('output');
 const encode = document.getElementById('encode');
 const decode = document.getElementById('decode');
 const copyToClipboardButton = document.getElementById('copy-to-clipboard');
-const copyPrompt = document.getElementById("copyPrompt");
+const copyPrompt = document.getElementById("copy-prompt");
 
 function encodeData() {
     output.value = btoa(input.value);
@@ -29,15 +29,15 @@ decode.addEventListener('change', () => {
     decodeData();
 });
 
-const copyButton = document.getElementById("copyButton");
+const copyButton = document.getElementById("copy-button");
 copyButton.addEventListener("click", function () {
     navigator.clipboard.writeText(output.value);
 
     copyPrompt.style.display = "block";
 
     // Add animation class for feedback
-    copyButton.classList.add("copyAnimation");
-    setTimeout(() => copyButton.classList.remove("copyAnimation"), 1000);
+    copyButton.classList.add("copy-animation");
+    setTimeout(() => copyButton.classList.remove("copy-animation"), 1000);
 
     // Hide the prompt message after a short delay
     setTimeout(() => {
