@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>No B$ Base64 encoder & decoder</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <nav>
         <a href="https://github.com/svopper/base64-en-de-code" target="_blank"><i class="fa fa-github"
-                style="color: white; font-size: 20px; margin-right: 5px;"></i>svopper/base64-en-de-code</a>
+                style="color: white; font-size: 20px; margin-right: 5px"></i>svopper/base64-en-de-code</a>
     </nav>
     <header>
         <h1>Base64 encoder & decoder</h1>
@@ -23,7 +23,7 @@
 
     <main>
         <div class="switch-field">
-            <input type="radio" id="decode" name="toggle" value="decode" checked/>
+            <input type="radio" id="decode" name="toggle" value="decode" checked />
             <label for="decode">Decode</label>
             <input type="radio" id="encode" name="toggle" value="encode" />
             <label for="encode">Encode</label>
@@ -35,11 +35,13 @@
                 <span id="error-message"></span>
             </div>
             <div class="output">
-                <h2>Output <i class="fa fa-lock" style="font-size: 24px;"></i></h2>
-                <textarea id="output" disabled placeholder="Your converted data will appear here..."></textarea>
-                <button id="copy-button" class="copy-to-clipboard">
-                    <i class="fa fa-clipboard" style="font-size: 24px;"></i>
-                </button>
+                <h2>Output <i class="fa fa-lock" style="font-size: 24px"></i></h2>
+                <div id="text-field">
+                    <textarea id="output-area" disabled placeholder="Your converted data will appear here..."></textarea>
+                    <button id="copy-button" class="copy-to-clipboard">
+                        <i class="fa fa-clipboard" style="font-size: 24px"></i>
+                    </button>
+                </div>
                 <div id="copy-prompt" class="copy-prompt">Copied!</div>
             </div>
         </div>

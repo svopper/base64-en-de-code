@@ -73,13 +73,13 @@ textarea {
   width: 100%;
   height: 350px;
   padding: 10px;
-  font-size: 1.2rem;
   border: none;
   color: white;
-  /* border-radius: 10px; */
   margin-bottom: 20px;
   background: rgba(255, 255, 255, 0.1);
   resize: none;
+  font-family: monospace;
+  font-size: 1rem;
 }
 
 h2 {
@@ -105,14 +105,14 @@ h2 {
   /* Subtle line on the right side of the first .box */
 }
 
-
-*/ .output {
+.output {
   position: relative;
+  cursor: not-allowed;
 }
 
 .copy-to-clipboard {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   right: 10px;
   width: 40px;
   height: 40px;
@@ -142,8 +142,6 @@ h2 {
   font-size: 14px;
   display: none;
 }
-
-
 
 .switch-field {
   display: flex;

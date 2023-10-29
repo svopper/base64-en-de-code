@@ -1,5 +1,5 @@
 const input = document.getElementById('input');
-const output = document.getElementById('output');
+const output = document.getElementById('output-area');
 const encode = document.getElementById('encode');
 const decode = document.getElementById('decode');
 const copyToClipboardButton = document.getElementById('copy-to-clipboard');
