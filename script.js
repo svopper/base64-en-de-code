@@ -27,12 +27,20 @@ input.addEventListener('input', () => {
 });
 
 encode.addEventListener('change', () => {
+    swapInputOutout();
     encodeData();
 });
 
 decode.addEventListener('change', () => {
+    swapInputOutout();
     decodeData();
 });
+
+function swapInputOutout(){
+    let temp = input.value;
+    input.value = output.value;
+    output.value = temp;
+}
 
 const copyButton = document.getElementById("copy-button");
 copyButton.addEventListener("click", function () {
