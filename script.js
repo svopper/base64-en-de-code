@@ -1,43 +1,56 @@
 const input = document.getElementById('input');
-const output = document.getElementById('output');
+const output = document.getElementById('output-area');
 const encode = document.getElementById('encode');
 const decode = document.getElementById('decode');
 const copyToClipboardButton = document.getElementById('copy-to-clipboard');
-const copyPrompt = document.getElementById("copyPrompt");
+const copyPrompt = document.getElementById("copy-prompt");
+const errorMessage = document.getElementById("error-message");
 
 function encodeData() {
     output.value = btoa(input.value);
 }
 
 function decodeData() {
-    output.value = atob(input.value);
+    try {
+        var decodedData = atob(input.value);
+        output.value = decodedData;
+        errorMessage.innerHTML = "";
+    } catch (e) {
+        errorMessage.innerHTML = "Invalid base64 string"
+    }
 }
 
 input.addEventListener('input', () => {
-    if (encode.checked) {
-        encodeData();
-    } else {
-        decodeData();
-    }
+    encode.checked
+    ? encodeData()
+    : decodeData();
 });
 
 encode.addEventListener('change', () => {
+    swapInputOutout();
     encodeData();
 });
 
 decode.addEventListener('change', () => {
+    swapInputOutout();
     decodeData();
 });
 
-const copyButton = document.getElementById("copyButton");
+function swapInputOutout(){
+    let temp = input.value;
+    input.value = output.value;
+    output.value = temp;
+}
+
+const copyButton = document.getElementById("copy-button");
 copyButton.addEventListener("click", function () {
     navigator.clipboard.writeText(output.value);
 
     copyPrompt.style.display = "block";
 
     // Add animation class for feedback
-    copyButton.classList.add("copyAnimation");
-    setTimeout(() => copyButton.classList.remove("copyAnimation"), 1000);
+    copyButton.classList.add("copy-animation");
+    setTimeout(() => copyButton.classList.remove("copy-animation"), 1000);
 
     // Hide the prompt message after a short delay
     setTimeout(() => {
