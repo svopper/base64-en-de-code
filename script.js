@@ -22,21 +22,21 @@ function decodeData() {
 
 input.addEventListener('input', () => {
     encode.checked
-    ? encodeData()
-    : decodeData();
+        ? encodeData()
+        : decodeData();
 });
 
 encode.addEventListener('change', () => {
-    swapInputOutout();
+    swapInputOutput();
     encodeData();
 });
 
 decode.addEventListener('change', () => {
-    swapInputOutout();
+    swapInputOutput();
     decodeData();
 });
 
-function swapInputOutout(){
+function swapInputOutput() {
     let temp = input.value;
     input.value = output.value;
     output.value = temp;
