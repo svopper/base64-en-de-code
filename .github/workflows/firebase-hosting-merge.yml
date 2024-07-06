@@ -15,8 +15,6 @@ jobs:
       - uses: cschleiden/replace-tokens@v1
         with:
           files: 'index.html'
-          tokenPrefix: '${'
-          tokenSuffix: '}'
         env: 
           BUILD_NUMBER: ${{ github.run_number }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
