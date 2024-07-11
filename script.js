@@ -48,10 +48,6 @@ function swapInputOutput() {
     let temp = input.value;
     input.value = output.value;
     output.value = temp;
-
-    let tempText = from.innerText;
-    from.innerText = to.innerText;
-    to.innerText = tempText;
 }
 
 const copyButton = document.getElementById("copy-button");

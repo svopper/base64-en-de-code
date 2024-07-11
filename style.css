@@ -9,6 +9,8 @@ html,
 body {
   height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -50,8 +52,9 @@ header p {
 
 /* Main styles */
 main {
-  width: 100%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 button {
@@ -70,11 +73,10 @@ button:hover {
 
 textarea {
   width: 100%;
-  height: 350px;
+  height: 100%;
   padding: 10px;
   border: none;
   color: white;
-  margin-bottom: 20px;
   background: rgba(255, 255, 255, 0.1);
   resize: none;
   font-family: monospace;
@@ -89,24 +91,35 @@ h2 {
 
 .converter {
   display: flex;
-  height: 100%;
+  flex: 1;
   justify-content: space-between;
 }
 
 .converter>div {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  height: 400px;
 }
 
 .converter>div:first-child {
-  border-right: 1px solid #444;
+  /* border-right: 1px solid #444; */
+  margin-right: 2px;
   /* Subtle line on the right side of the first .box */
+}
+
+.input,
+.output {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#input:focus {
+  outline: none;
 }
 
 .output {
   position: relative;
-  cursor: not-allowed;
 }
 
 .copy-to-clipboard {
@@ -147,14 +160,12 @@ h2 {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 30px;
-  overflow: hidden;
 }
 
 .switch-wrapper div {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
-  overflow: hidden;
 }
 
 .switch-field {}
@@ -201,6 +212,7 @@ h2 {
 
 #error-message {
   color: red;
+  background: rgba(255, 255, 255, 0.1);
   font-size: 14px;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }

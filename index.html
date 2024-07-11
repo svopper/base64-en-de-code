@@ -31,9 +31,6 @@
                 <input type="radio" id="encode" name="toggle" value="encode" />
                 <label for="encode">Encode</label>
             </div>
-            <div class="switch-direction">
-                <span id="from"></span> -> <span id="to"></span>
-            </div>
         </div>
         <div class="converter">
             <div class="input">
@@ -43,13 +40,10 @@
             </div>
             <div class="output">
                 <h2>Output <i class="fa fa-lock" style="font-size: 24px"></i></h2>
-                <div id="text-field">
-                    <textarea id="output-area" disabled
-                        placeholder="Your converted data will appear here..."></textarea>
-                    <button id="copy-button" class="copy-to-clipboard">
-                        <i class="fa fa-clipboard" style="font-size: 24px"></i>
-                    </button>
-                </div>
+                <textarea id="output-area" disabled placeholder="Your converted data will appear here..."></textarea>
+                <button id="copy-button" class="copy-to-clipboard">
+                    <i class="fa fa-clipboard" style="font-size: 24px"></i>
+                </button>
                 <div id="copy-prompt" class="copy-prompt">Copied!</div>
             </div>
         </div>
