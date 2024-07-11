@@ -142,12 +142,22 @@ h2 {
   display: none;
 }
 
-.switch-field {
+.switch-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 30px;
   overflow: hidden;
 }
+
+.switch-wrapper div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.switch-field {}
 
 .switch-field input {
   position: absolute !important;

@@ -13,8 +13,8 @@
 
 <body>
     <nav>
-        <a href="https://github.com/svopper/base64-en-de-code" target="_blank"><i class="fa fa-github"
-                style="margin-right: 5px"></i>svopper/base64-en-de-code</a>
+        <a href="https://github.com/svopper/base64-en-de-code" target="_blank"><i
+                class="fa fa-github"></i>svopper/base64-en-de-code</a>
         <a href="#{SERVER_URL}#/#{REPOSITORY}#/actions/runs/#{RUN_ID}#" target="_blank">
             v#{BUILD_NUMBER}#</a>
     </nav>
@@ -24,11 +24,16 @@
     </header>
 
     <main>
-        <div class="switch-field">
-            <input type="radio" id="decode" name="toggle" value="decode" checked />
-            <label for="decode">Decode</label>
-            <input type="radio" id="encode" name="toggle" value="encode" />
-            <label for="encode">Encode</label>
+        <div class="switch-wrapper">
+            <div class="switch-field">
+                <input type="radio" id="decode" name="toggle" value="decode" checked />
+                <label for="decode">Decode</label>
+                <input type="radio" id="encode" name="toggle" value="encode" />
+                <label for="encode">Encode</label>
+            </div>
+            <div class="switch-direction">
+                <span id="from"></span> -> <span id="to"></span>
+            </div>
         </div>
         <div class="converter">
             <div class="input">
