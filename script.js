@@ -2,8 +2,6 @@ const input = document.getElementById('input');
 const output = document.getElementById('output-area');
 const encode = document.getElementById('encode');
 const decode = document.getElementById('decode');
-const from = document.getElementById('from');
-const to = document.getElementById('to');
 const copyToClipboardButton = document.getElementById('copy-to-clipboard');
 const copyPrompt = document.getElementById("copy-prompt");
 const errorMessage = document.getElementById("error-message");
@@ -40,9 +38,6 @@ decode.addEventListener('change', () => {
     swapInputOutput();
     decodeData();
 });
-
-from.innerText = BASE64;
-to.innerText = PLAIN;
 
 function swapInputOutput() {
     let temp = input.value;
